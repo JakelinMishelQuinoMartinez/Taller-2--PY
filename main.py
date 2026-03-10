@@ -12,7 +12,27 @@ def menu_principal():
     print("=" * 40)
 
 def agregar_producto():
-    pass
+    print("=" * 40)
+    print("AÑADIR NUEVO PRODUCTO")
+    print("=" * 40)
+    nombre = input("Nombre del producto: ").lower()
+    nombres_existentes = [p['nombre'].lower() for p in productos]
+    if nombre.lower() in nombres_existentes:
+        print(f"Aviso: El producto '{nombre}' ya existe.")
+        return
+    try:
+        precio = float(input("Precio: "))
+        cantidad = int(input("Cantidad disponible: "))
+        nuevo_producto = {
+            "nombre": nombre,
+            "precio": precio,
+            "cantidad": cantidad
+        }
+        productos.append(nuevo_producto)
+        print(f"\nEl producto '{nombre}' ha sido agregado al inventario.")
+        print("Volviendo al inicio...\n")
+    except ValueError:
+        print("\nError: El precio y la cantidad deben ser valores numéricos.")
 
 def listar_productos():
     pass
