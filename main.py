@@ -42,7 +42,20 @@ def eliminar_producto():
     pass
 
 def calcular_valor():
-    pass
+    print("=" * 40)
+    print(f"{'PRODUCTO':<20} | {'SUBTOTAL':<15}")
+    print("-" * 40)
+    total_acumulado = 0
+    if not productos:
+        print("El inventario está vacío. El valor total es Q0.00")
+    else:
+        for p in productos:
+            subtotal = p['precio'] * p['cantidad']
+            total_acumulado = subtotal            
+            print(f"{p['nombre']:<20} | Q{subtotal:<14.2f}")
+        print("-" * 45)
+        print(f"{'TOTAL GENERAL:':<20} | Q{total_acumulado:<14.2f}")
+    print("=" * 45)
 
 while True:
     menu_principal()
