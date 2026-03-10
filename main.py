@@ -1,3 +1,4 @@
+from inventario import productos
 def menu_principal():
     print("=" * 40)
     print("Menú Principal")
@@ -17,7 +18,25 @@ def listar_productos():
     pass
 
 def actualizar_cantidad():
-    pass
+    print("=" * 40)
+    print("ACTUALIZAR CANTIDAD DE UN PRODUCTO")
+    print("=" * 40)
+    nombre_buscar = input("Ingrese el nombre del producto a modificar: ").lower()
+    encontrado = False
+    for p in productos:
+        if p['nombre'].lower() == nombre_buscar:
+            encontrado = True
+            print(f"\nProducto encontrado: {p['nombre']}")
+            print(f"Cantidad actual: {p['cantidad']}")
+            try:
+                nueva_cantidad = int(input("Ingrese la nueva cantidad: "))
+                p['cantidad'] = nueva_cantidad
+                print(f"La cantidad de '{p['nombre']}' ha sido actualizada.")
+            except ValueError:
+                print("Error: Debe ingresar un número entero para la cantidad.")
+            break 
+    if not encontrado:
+        print(f"\nError: El producto '{nombre_buscar}' no existe en el inventario.")
 
 def eliminar_producto():
     pass
