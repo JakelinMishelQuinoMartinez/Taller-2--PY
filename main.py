@@ -72,7 +72,24 @@ def actualizar_cantidad():
         print(f"\nError: El producto '{nombre_buscar}' no existe en el inventario.")
 
 def eliminar_producto():
-    pass
+    print("=" * 40)
+    print("ELIMINAR PRODUCTO")
+    print("=" * 40)
+    nombre_buscar = input("Ingrese el nombre del producto que desea eliminar: ").lower()
+    encontrado = False
+    for p in productos:
+        if p['nombre'].lower() == nombre_buscar:
+            confirmar = input(f"¿Está seguro de eliminar '{p['nombre']}'? (si/no): ").lower()
+            if confirmar == 'si':
+                productos.remove(p)
+                print(f"El producto '{p['nombre']}' ha sido eliminado.")
+            else:
+                print("Operación cancelada.")
+            encontrado = True
+            break
+            
+    if not encontrado:
+        print(f"\nError: El producto '{nombre_buscar}' no se encuentra en el inventario.")
 
 def calcular_valor():
     print("=" * 40)
