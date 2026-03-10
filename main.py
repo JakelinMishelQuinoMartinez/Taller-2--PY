@@ -35,7 +35,20 @@ def agregar_producto():
         print("\nError: El precio y la cantidad deben ser valores numéricos.")
 
 def listar_productos():
-    pass
+    print("=" * 40)
+    print("LISTADO DE TODOS LOS PRODUCTOS")
+    print("=" * 40)
+    print(f"{'NOMBRE':<20} | {'PRECIO':<10} | {'CANTIDAD':<8}")
+    print("-" * 40)    
+    if not productos:
+        print("El inventario está vacío.")
+    else:
+        for p in productos:
+            nombre = p['nombre']
+            precio = p['precio']
+            cantidad = p['cantidad']
+            print(f"{nombre:<20} | {precio:<9.2f} | {cantidad:<8}")
+        print("=" * 40)
 
 def actualizar_cantidad():
     print("=" * 40)
