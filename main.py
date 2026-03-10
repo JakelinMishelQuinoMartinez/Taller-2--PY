@@ -1,0 +1,11 @@
+def menu_principal():
+    print("=" * 40)
+    print("Menú Principal")
+    print("=" * 40)
+    print("1. Agregar producto")
+    print("2. Listar productos")
+    print("3. Actualizar cantidad")
+    print("4. Eliminar producto")
+    print("5. Calcular valor total del inventario")
+    print("6. Salir")
+    print("=" * 40)
