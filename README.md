@@ -1,4 +1,4 @@
- TALLER 2: Desarrollo de una App para Administrar un Inventario
+# TALLER 2: Desarrollo de una App para Administrar un Inventario
 Creación de una aplicación de consola para gestionar el inventario de una tienda pequeña, poniendo en práctica la utilización de Git y GitHub para versionar el proyecto, aplicando ramas y commits estructurados.
 
 ## 1. Descripción del Sistema
